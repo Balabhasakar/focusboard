@@ -1,0 +1,246 @@
+.focus-notes {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 152px;
+  margin-top: 28px;
+  padding: 28px 32px 36px;
+  border-radius: 18px;
+  color: var(--white);
+  background: linear-gradient(100deg, #6c5cf3 0%, #5b4be2 100%);
+  overflow: hidden;
+}
+
+.focus-content {
+  min-width: 0;
+}
+
+.focus-eyebrow {
+  margin: 0 0 12px;
+  display: flex;
+  gap: 18px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.focus-title {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.focus-text {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* floating mini card */
+.focus-card-wrap {
+  position: relative;
+  margin-left: auto;
+  margin-right: 90px;
+  width: 190px;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.focus-card-ghost {
+  position: absolute;
+  inset: 8px -8px -8px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  transform: rotate(-3deg);
+}
+
+.focus-card {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--text);
+  box-shadow: 0 10px 24px rgba(30, 20, 120, 0.25);
+  transform: rotate(-3deg);
+}
+
+.focus-card-check {
+  color: #1faa6b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.focus-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.focus-card-label {
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.focus-card-title {
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.focus-card-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.focus-bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--primary-soft);
+}
+
+.focus-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--primary);
+}
+
+/* arrows */
+.focus-controls {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.focus-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-items: center;
+}
+
+.focus-arrow-prev {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.focus-arrow-prev:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.focus-arrow-next {
+  background: var(--white);
+  color: var(--primary);
+}
+
+.focus-arrow:focus-visible,
+.focus-dot:focus-visible {
+  outline-color: var(--white);
+}
+
+/* indicators */
+.focus-dots {
+  position: absolute;
+  left: 32px;
+  bottom: 14px;
+  display: flex;
+  gap: 6px;
+}
+
+.focus-dot {
+  width: 24px;
+  height: 3px;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  position: relative;
+}
+
+/* bigger tap area without changing the look */
+.focus-dot::after {
+  content: "";
+  position: absolute;
+  inset: -10px -2px;
+}
+
+.focus-dot.active {
+  background: var(--white);
+}
+
+/* Tablet: keep the floating card, tighten spacing */
+@media (max-width: 860px) {
+  .focus-notes {
+    margin-top: 20px;
+    padding: 24px 24px 34px;
+  }
+
+  .focus-card-wrap {
+    margin-right: 80px;
+  }
+
+  .focus-controls {
+    right: 20px;
+  }
+
+  .focus-dots {
+    left: 24px;
+  }
+
+  .focus-title {
+    font-size: 22px;
+  }
+}
+
+/* Phone: no floating card, bigger arrows, text stays clear of the arrows */
+@media (max-width: 600px) {
+  .focus-notes {
+    padding: 22px 20px 34px;
+  }
+
+  .focus-card-wrap {
+    display: none;
+  }
+
+  .focus-content {
+    padding-right: 104px;
+  }
+
+  .focus-controls {
+    right: 14px;
+  }
+
+  .focus-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .focus-title {
+    font-size: 20px;
+  }
+
+  .focus-dots {
+    left: 20px;
+  }
+}

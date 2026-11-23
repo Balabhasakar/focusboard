@@ -1,0 +1,131 @@
+.task-menu-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.menu-popover {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  min-width: 140px;
+  padding: 4px;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(26, 29, 58, 0.14);
+  z-index: 20;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 12px;
+  text-align: left;
+}
+
+.menu-item:hover,
+.menu-item:focus-visible {
+  background: var(--bg);
+}
+
+/* default category for tasks made from the form (the Figma form has no category field) */
+.cat-general {
+  background: #eef0f7;
+  color: #5d6280;
+}.task-menu-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.menu-popover {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  min-width: 170px;
+  padding: 4px;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(26, 29, 58, 0.14);
+  z-index: 20;
+}
+
+.menu-item {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 12px;
+  text-align: left;
+}
+
+.menu-item:hover,
+.menu-item:focus-visible {
+  background: var(--bg);
+}
+
+.menu-item .menu-check {
+  margin-left: auto;
+  color: var(--primary);
+}
+
+.menu-item.current {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.menu-item.danger {
+  color: #c52f2f;
+}
+
+.menu-item.danger:hover,
+.menu-item.danger:focus-visible {
+  background: #fde8e8;
+}
+
+.menu-label {
+  margin: 0;
+  padding: 8px 12px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.menu-divider {
+  height: 1px;
+  margin: 4px 0;
+  background: var(--border);
+}
+
+/* default category for tasks made from the form (the Figma form has no category field) */
+.cat-general {
+  background: #eef0f7;
+  color: #5d6280;
+}
+
+@media (max-width: 860px) {
+  .menu-popover {
+    min-width: 190px;
+  }
+
+  .menu-item {
+    min-height: 44px;
+  }
+}

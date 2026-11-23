@@ -1,0 +1,72 @@
+/* Loaded last, so these override earlier styles. */
+
+/* Darker grey: 4.5:1 or better on white and on the page background */
+:root {
+  --muted: #656a8a;
+}
+
+.field-input::placeholder,
+.search-bar input::placeholder {
+  color: var(--muted);
+}
+
+/* Pill text colors darkened to pass contrast on their backgrounds */
+.pill.pill-high {
+  color: #9a4a05;
+}
+.pill.pill-medium {
+  color: #0f6b44;
+}
+.pill.pill-low {
+  color: #136052;
+}
+.pill.cat-content {
+  color: #5545de;
+}
+.pill.cat-research {
+  color: #12647f;
+}
+.pill.cat-testing {
+  color: #8a4a0a;
+}
+
+/* Skip link: hidden until it gets keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.page:focus {
+  outline: none;
+}
+
+/* Visually hidden, but read by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.empty-state .btn-primary {
+  margin-top: 14px;
+}

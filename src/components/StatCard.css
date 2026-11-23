@@ -1,0 +1,97 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.stat-icon.purple {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.stat-icon.blue {
+  background: #dff3fb;
+  color: #1c9bc9;
+}
+
+.stat-icon.green {
+  background: #dcf5ea;
+  color: #1faa6b;
+}
+
+.stat-body {
+  min-width: 0;
+}
+
+.stat-label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Tablet: keep 3 cards, tighten the inside */
+@media (max-width: 860px) {
+  .stats-grid {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .stat-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* Phone: 2 cards, as in the mobile Figma */
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 12px;
+  }
+
+  .stat-card.hide-mobile {
+    display: none;
+  }
+}

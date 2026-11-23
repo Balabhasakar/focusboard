@@ -1,0 +1,203 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow-y: auto;
+  background: rgba(26, 29, 58, 0.45);
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 24px 60px rgba(26, 29, 58, 0.25);
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-head h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.modal-head p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg);
+  color: #5d6280;
+  display: grid;
+  place-items: center;
+}
+
+.modal-close:hover {
+  background: var(--primary-soft);
+}
+
+/* ---------- Fields ---------- */
+.field {
+  margin-bottom: 16px;
+  min-width: 0;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 12px;
+}
+
+textarea.field-input {
+  height: auto;
+  padding: 12px 14px;
+  resize: vertical;
+  min-height: 84px;
+}
+
+.field-input::placeholder {
+  color: #b3b7c9;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.field-input.invalid {
+  border-color: #d93a3a;
+}
+
+.field-input.invalid:focus {
+  box-shadow: 0 0 0 3px #fbe3e3;
+}
+
+.field-error {
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: #c52f2f;
+}
+
+/* select with custom chevron */
+.select-wrap {
+  position: relative;
+}
+
+.select-wrap select {
+  appearance: none;
+  padding-right: 34px;
+}
+
+.select-wrap svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* date input with leading icon */
+.date-wrap {
+  position: relative;
+}
+
+.date-wrap > svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.date-wrap .field-input {
+  padding-left: 38px;
+}
+
+.required-note {
+  margin: 0 0 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--primary);
+}
+
+/* ---------- Actions ---------- */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-outline {
+  min-height: 42px;
+  padding: 0 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-outline:hover {
+  background: var(--bg);
+}
+
+.modal-actions .btn-primary {
+  min-height: 42px;
+  padding: 0 24px;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 22px 18px;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
